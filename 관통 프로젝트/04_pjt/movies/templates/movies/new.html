@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>NEW</h1>
+  <form action="{% url 'movies:create' %}" method='POST'>
+    {% csrf_token %}
+    <label for="title">TITLE</label>
+    <input type="text" id="title" name="title"><br>
+
+    <label for="audience">AUDIENCE</label>
+    <input type="text" id="audience" name="audience"><br>
+
+    <label for="release_date">RELEASE_DATE</label>
+    <input type="date" id="release_date" name="release_date"><br>
+
+    <label for="genre">GENRE</label>
+    <select id="genre" name="genre">
+      {% for genre in  genres %}
+        <option>{{ genre }}</option>
+      {% endfor %}
+    </select><br>
+    
+    <label for="score">SCORE</label>
+    <input type="number" id="score" name="score" placeholder="0.0" step="0.5" min="0" max="10"><br>
+
+    <label for="poster_url">POSTER_URL</label>
+    <input type="text" id="poster_url" name="poster_url"><br>
+
+    <label for="description">DESCRIPTION</label>
+    <textarea name="description" id="description" cols="30" rows="5"></textarea><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+  <hr>
+  <a href="{% url 'movies:index' %}">BACK</a>
+
+{% endblock content %}
