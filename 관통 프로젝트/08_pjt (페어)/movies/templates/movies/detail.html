@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>상세 페이지</h2>
+
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-3">
+      <img src="{{ movie.poster_path }}" class="img-fluid rounded-start" alt="img" width="400">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{ movie.title }}</h3>
+        <p class="card-text">
+          {% if movie.overview %}
+          <p>{{movie.overview}}</p>
+          {% else %}
+            <p></p>
+          {% endif %}
+        </p>
+        <ul>
+          <li><p>개봉일자 : {{ movie.release_date }}</p></li>
+          <li><p>관람객 수 : {{ movie.popularity }}</p></li>
+          <li><p>평점 : {{ movie.vote_average }}</p></li>
+          <li>
+            <p>장르: 
+              {% for genre in genres %}
+                {{ genre.name }}{{" "}}
+              {% endfor %}
+            </p>
+          </li>
+        </ul>
+        {% comment %} <p>개봉일자 : {{ movie.release_date }}</p>
+        <p>관람객 수 : {{ movie.popularity }}</p>
+        <p>평점 : {{ movie.vote_average }}</p>
+        <p>장르: 
+          {% for genre in genres %}
+            {{ genre.name }}{{" "}}
+          {% endfor %}
+        </p> {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+  
+  
+  
+</div>
+
+{% endblock %}
+
