@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
+/* 폰트 불러오기 */
+/* 폰트 사용 - 폰트가 여러개 있을 때
+가장 아래에 적혀져있는 폰트 사용, 같은 라인에서는 가장 처음, 가장 왼쪽에 있는 폰트 사용한다. */
+
+body{
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Pen Script";
+  /* 현재 화면의 100%를 최소 높이로 갖겠다. */
+  min-height: 100vh;
+  margin: 0px;
+}
+
+/* 반응형 웹 */
+/* 웹 브라우저의 화면 크기가 650px이상일 때 만 적용하겠다. */
+@media (min-width : 650px){
+  .App {
+    width: 640px;
+  }
+}
+
+/* 웹 브라우저의 화면 크기가 650px이하일 때 만 적용하겠다. */
+@media (max-width : 650px){
+  .App {
+    /* 현재 화면 너비의 90% 차지 */
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+
+.App {
+  min-height: 100vh;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* MyButton */
+
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+}
+
+.MyButton_default {
+  background-color: #ececec;
+  color: black;
+}
+.MyButton_positive {
+  background-color: #64c964;
+  color: white;
+}
+.MyButton_negative {
+  background-color: #fd565f;
+  color: white;
+}
+
+/* HEADER */
+
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  display: flex;
+  /* 세로 중앙 */
+  align-items: center;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+header > div {
+  display: flex;
+}
+
+/* 기능 추가 시작 */
+header .head_date {
+  display: flex;
+  width: 50%;
+  justify-content: center;
+}
+
+header .head_month {
+  /* padding-left: 10px; */
+  display: flex;
+  align-items: center;
+}
+
+input[type=month]::-webkit-datetime-edit-text {
+  -webkit-appearance: none;
+  display: none;
+}
+input[type=month]::-webkit-datetime-edit-month-field{
+  -webkit-appearance: none;
+  display: none;
+}
+input[type=month]::-webkit-datetime-edit-year-field {
+  -webkit-appearance: none;
+  display: none;
+}
+
+input[type="month"] {
+  border: none;
+  width: 20px;
+  height: 20px;
+  padding-left: 0px;
+}
+
+/* input[type=month]:focus {
+  border: none;
+  outline: none;
+} */
+
+/* 기능 추가 끝 */
+
+
+/* 수정 */
+header .head_text {
+  font-size: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+header .head_btn_left {
+  width: 25%;
+  /* 왼쪽 끝 */
+  justify-content: start;
+}
+
+header .head_btn_right {
+  width: 25%;
+  /* 오른쪽 끝 */
+  justify-content: end;
+}
+
+header button {
+  font-family: "Nanum Pen Script";
+}
+
+
+/* DiaryList */
+
+.DiaryList .menu_wrapper {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryList .menu_wrapper .right_col {
+  /* display: flex 부모 아래에 남은 영역을 모두 차지한다. */
+  flex-grow: 1;
+}
+.DiaryList .menu_wrapper .right_col button {
+  width: 100%;
+}
+
+.DiaryList .ControlMenu {
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  cursor: pointer;
+  font-family: "Nanum Pen Script", cursive;
+
+  font-size: 18px;
+}
+
+/* DiaryItem */
+.DiaryItem {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #e2e2e2;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.DiaryItem .emotion_img_wrapper {
+  cursor: pointer;
+
+  min-width: 120px;
+  height: 80px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+/* 원형 이모티콘을 감싸고있는 배경을 채워 사각형으로 만든다. */
+.DiaryItem .emotion_img_wrapper_1 {
+  background-color: #64c964;
+}
+.DiaryItem .emotion_img_wrapper_2 {
+  background-color: #9dd772;
+}
+.DiaryItem .emotion_img_wrapper_3 {
+  background-color: #fdce17;
+}
+.DiaryItem .emotion_img_wrapper_4 {
+  background-color: #fd8446;
+}
+.DiaryItem .emotion_img_wrapper_5 {
+  background-color: #fd565f;
+}
+
+/* 이미지가 상자 밖으로 안나가게 사이즈 조정 */
+.DiaryItem .emotion_img_wrapper img {
+  width: 50%;
+}
+
+.DiaryItem .info_wrapper {
+  flex-grow: 1;
+  margin-left: 20px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.DiaryItem .diary_date {
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.DiaryItem .diary_content_preview {
+  font-size: 18px;
+}
+
+.DiaryItem .btn_wrapper {
+  min-width: 70px;
+}
+
+/* DiaryEditor */
+
+.DiaryEditor {
+}
+
+.DiaryEditor section {
+  margin-bottom: 40px;
+}
+
+.DiaryEditor h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.DiaryEditor .input_date {
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  cursor: pointer;
+  font-family: "Nanum Pen Script", cursive;
+
+  font-size: 20px;
+}
+
+.DiaryEditor .emotion_list_wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 2%;
+}
+
+.DiaryEditor textarea {
+  font-family: "Nanum Pen Script", cursive;
+  font-size: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  /* 가로길이는 고정 */
+  resize: vertical;
+
+  border: none;
+  border-radius: 5px;
+  background-color: #ececec;
+
+  padding: 20px;
+}
+
+.DiaryEditor .control_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Emotion Item */
+
+.EmotionItem {
+  cursor: pointer;
+
+  border-radius: 5px;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.EmotionItem_off {
+  background-color: #ececec;
+}
+
+.EmotionItem_on_1 {
+  background-color: #64c964;
+  color: white;
+}
+
+.EmotionItem_on_2 {
+  background-color: #9dd772;
+  color: white;
+}
+
+.EmotionItem_on_3 {
+  background-color: #fdce17;
+  color: white;
+}
+
+.EmotionItem_on_4 {
+  background-color: #fd8446;
+  color: white;
+}
+
+.EmotionItem_on_5 {
+  background-color: #fd565f;
+  color: white;
+}
+
+.EmotionItem img {
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.EmotionItem span {
+  font-size: 18px;
+}
+
+/* Diary */
+
+/* 감정 스타일링 */
+.DiaryPage section {
+  /* 중앙으로 옮기기 위한 밑작업 */
+  width: 100%;
+  margin-bottom: 100px;
+
+  display: flex;
+  /* 세로 배치 */
+  flex-direction: column;
+  /* 가로 중앙 */
+  align-items: center;
+  text-align: center;
+}
+
+.DiaryPage h4 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* 사각형으로 공간 만들기 */
+.DiaryPage .diary_img_wrapper {
+  background-color: #ececec;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  display: flex;
+  /* 세로 배치 */
+  flex-direction: column;
+  /* 가로 중앙 */
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* 사각형 색 맞추기 */
+.DiaryPage .diary_img_wrapper_1 {
+  background-color: #64c964;
+  color: white;
+}
+.DiaryPage .diary_img_wrapper_2 {
+  background-color: #9dd772;
+  color: white;
+}
+.DiaryPage .diary_img_wrapper_3 {
+  background-color: #fdce17;
+  color: white;
+}
+.DiaryPage .diary_img_wrapper_4 {
+  background-color: #fd8446;
+  color: white;
+}
+.DiaryPage .diary_img_wrapper_5 {
+  background-color: #fd565f;
+  color: white;
+}
+
+.DiaryPage .emotion_descript {
+  font-size: 25px;
+}
+
+/* 일기 스타일링 */
+.DiaryPage .diary_content_wrapper {
+  background-color: #ececec;
+  border-radius: 5px;
+
+  /* 공간을 모두 사용하기 위해 */
+  width: 100%;
+  /* 길어서 줄을 바꿔야할 때 단어를 쪼개지 않기 */
+  word-break: keep-all;
+  /* 텍스트가 주어진 크기를 넘어가버릴 경우 줄바꿈을 강제로 하기 */
+  overflow-wrap: break-word;
+}
+.DiaryPage .diary_content_wrapper p {
+  padding: 20px;
+  text-align: left;
+  /* 글자 크기 */
+  font-size: 20px;
+  font-family: "Yeon Sung";
+  /* 글자 두께 */
+  font-weight: 400;
+  /* 글자의 높이 - 글 사이가 넓어짐 */
+  line-height: 2.5;
+}

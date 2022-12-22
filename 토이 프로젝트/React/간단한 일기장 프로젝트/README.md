@@ -4,23 +4,23 @@
 
 
 
-##  전체 구성
+##  * 전체 구성
 
 <img width="677" alt="화면 캡처 2022-12-13 180109" src="https://user-images.githubusercontent.com/109335452/207273545-1f0c9221-7593-4546-9cb9-c305913a7537.png">
 
 
 
-## 일기 생성
+## * 일기 생성
 
 <img width="590" alt="1  일기 생성" src="https://user-images.githubusercontent.com/109335452/207281462-231bd5e4-f714-4725-900d-debb3cbb483d.png">
 
 
 
-## 일기 수정 & 삭제
+## * 일기 수정 & 삭제
 
 <img width="669" alt="2  일기 수정 시도" src="https://user-images.githubusercontent.com/109335452/207281468-be5982b2-3953-4882-9101-c89a53fc45a2.png">
 
-
+---
 
 ## 추가 기능
 
@@ -37,7 +37,7 @@
 
 ## Code
 
-```react
+```javascript
 // DiaryEditor.js
 
 import React, { useContext, useRef, useState } from "react";
@@ -115,7 +115,7 @@ export default React.memo(DiaryEditor);
 
 ```
 
-```react
+```javascript
 // DiaryItem.js
 
 import React, { useContext, useRef, useState } from "react";
