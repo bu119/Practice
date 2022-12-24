@@ -1,6 +1,6 @@
 # 감정 일기장 만들기 Project
 
-React 를 활용한 Toy Project 입니다.
+**React** 를 활용한 Toy Project 입니다.
 
 - 데이터 추가 / 수정 / 삭제 기능
 - Local Storage를 이용하여 웹 브라우저를 DB처럼 이용
